@@ -1,19 +1,9 @@
-import { useEffect } from "react";
 import { ProductCardProps } from "../../config/types";
-import useProduct from "../../hooks/useProduct";
 import Button from "../UI/Button";
 
 const ProductCard = (props: ProductCardProps) => {
-  const {
-    id,
-    image,
-    title,
-    description,
-    stock,
-    rating,
-    price,
-    handleAddToCart,
-  } = props;
+  const { id, image, title, description, stock, price, handleAddToCart } =
+    props;
 
   const cartData = {
     id,

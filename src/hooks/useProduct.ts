@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { AppDispatch } from "../redux/store";
+import { CartItem, Filters, Product, SortBy } from "../config/types";
+import { getCartItems, requestAddToCart } from "../redux/slice/cartSlice";
 import {
   loading,
   getProducts,
@@ -10,8 +11,7 @@ import {
   setSort,
   getActiveFilters,
 } from "../redux/slice/productSlice";
-import { CartItem, Filters, Product, SortBy } from "../config/types";
-import { getCartItems, requestAddToCart } from "../redux/slice/cartSlice";
+import { AppDispatch } from "../redux/store";
 
 const useProduct = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -52,13 +52,13 @@ const useProduct = () => {
       .filter((product) =>
         filter.category.length > 0
           ? filter.category.includes(product.category)
-          : product
+          : product,
       )
       .filter((product) =>
-        filter.price > 0 ? product.price <= filter.price : product
+        filter.price > 0 ? product.price <= filter.price : product,
       )
       .filter((product) =>
-        filter.rating > 0 ? product.rating >= filter.rating : product
+        filter.rating > 0 ? product.rating >= filter.rating : product,
       );
   };
 

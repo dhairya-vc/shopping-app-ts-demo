@@ -11,7 +11,7 @@ const RatingFilter = () => {
           <li
             key={rtg}
             className={`px-2 cursor-pointer py-1 border text-sm font-semibold rounded-md ${
-              rating === rtg ? "bg-yellow-200 text-slate-700" : "text-slate-500"
+              rating >= rtg ? "bg-yellow-200 text-slate-700" : "text-slate-500"
             }`}
             onClick={() => handleRating(rtg)}
           >

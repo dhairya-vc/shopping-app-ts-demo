@@ -11,7 +11,9 @@ const CategoryFilter = () => {
           <li
             key={category}
             className={`pl-2 cursor-pointer mb-1.5 rounded text-sm font-bold capitalize ${
-              selected.includes(category) ? "text-slate-700 underline" : "text-slate-500"
+              selected.includes(category)
+                ? "text-slate-700 underline"
+                : "text-slate-500"
             }`}
             onClick={() => handleCategory(category)}
           >

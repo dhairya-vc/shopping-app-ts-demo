@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import products from "../mock/product.json";
 import { getActiveFilters, setFilters } from "../redux/slice/productSlice";
+
 import useDebounce from "./useDebounce";
 
 const useFilter = () => {
@@ -27,14 +28,14 @@ const useFilter = () => {
         setFilters({
           ...filter,
           category: filter.category.filter((cat) => cat !== category),
-        })
+        }),
       );
     } else {
       dispatch(
         setFilters({
           ...filter,
           category: [...filter.category, category],
-        })
+        }),
       );
     }
   };
@@ -44,7 +45,7 @@ const useFilter = () => {
       setFilters({
         ...filter,
         rating: filter.rating === rating ? 0 : rating,
-      })
+      }),
     );
   };
 
@@ -57,8 +58,9 @@ const useFilter = () => {
       setFilters({
         ...filter,
         price: debouncedPrice,
-      })
+      }),
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedPrice]);
 
   return {

@@ -12,5 +12,5 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <ReduxProvider store={store}>
       <App />
     </ReduxProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

@@ -1,9 +1,9 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 import { Filters, Product, SortBy } from "../../config/types";
-import { RootState } from "../store";
 import products from "../../mock/product.json";
+import { RootState } from "../store";
 
 export interface ProductState {
   loading: boolean;
@@ -62,7 +62,7 @@ export const {
   requestProductFailed,
   setQuery,
   setSort,
-	setFilters
+  setFilters,
 } = productSlice.actions;
 
 // export const requestProducts = createAsyncThunk(
