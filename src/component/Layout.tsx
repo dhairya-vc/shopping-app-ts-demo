@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Header, Sidebar } from "./UI";
@@ -9,7 +10,9 @@ const Layout = () => {
       <div className="flex h-full">
         <Sidebar />
         <main className="w-full px-16 py-8">
-          <Outlet />
+          <Suspense fallback="Loading...">
+            <Outlet />
+          </Suspense>
         </main>
       </div>
       {/* <Footer /> */}
