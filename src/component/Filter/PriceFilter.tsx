@@ -2,7 +2,7 @@ import useFilter from "../../hooks/useFilter";
 import { Input } from "../UI";
 
 const PriceFilter = () => {
-  const { inputPrice, price, handlePrice } = useFilter();
+  const { inputPrice, handlePrice } = useFilter();
 
   return (
     <div className="mb-4">

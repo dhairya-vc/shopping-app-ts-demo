@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import { Footer, Header, Sidebar } from "./UI";
+import { Header, Sidebar } from "./UI";
 
 const Layout = () => {
   return (
